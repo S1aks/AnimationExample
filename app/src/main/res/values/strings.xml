@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AnimationExample</string>
+    <string name="go_message">Go!!!</string>
+</resources>
