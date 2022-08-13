@@ -25,30 +25,30 @@ class MainActivity : AppCompatActivity() {
         width = binding.root.width.toFloat()
         height = binding.root.height.toFloat()
         val carSize = resources.getDimension(R.dimen.car_size)
-        pathList + Path().apply {
+        pathList.add(Path().apply {
             arcTo(
                 0f, -(height / 2), (width - carSize), (height / 2),
                 180f, -180f, true
             )
-        }
-        pathList + Path().apply {
+        })
+        pathList.add(Path().apply {
             arcTo(
                 (width / 2 - carSize), 0f, (width * 1.5f - carSize), (height - carSize),
                 270f, -180f, true
             )
-        }
-        pathList + Path().apply {
+        })
+        pathList.add(Path().apply {
             arcTo(
                 0f, (height / 2 - carSize), (width - carSize), (height * 1.5f - carSize),
                 0f, -180f, true
             )
-        }
-        pathList + Path().apply {
+        })
+        pathList.add(Path().apply {
             arcTo(
                 -(width / 2), 0f, (width / 2), (height - carSize),
                 90f, -180f, true
             )
-        }
+        })
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         binding.car.tag = IMAGEVIEW_TAG
         binding.car.setOnLongClickListener { view: View ->
             binding.root.setBackgroundResource(R.color.white)
+            Toast.makeText(this, getString(R.string.drag_message), Toast.LENGTH_SHORT).show()
             val item = ClipData.Item(IMAGEVIEW_TAG)
             val dataToDrag =
                 ClipData(IMAGEVIEW_TAG, arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN), item)

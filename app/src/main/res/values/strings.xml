@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AnimationExample</string>
     <string name="go_message">Go!!!</string>
+    <string name="drag_message">Drag Car.</string>
 </resources>
